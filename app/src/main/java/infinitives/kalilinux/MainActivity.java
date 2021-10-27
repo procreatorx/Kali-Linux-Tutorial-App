@@ -61,7 +61,8 @@ import static infinitives.kalilinux.R.string.app_name;
 
 
 public class MainActivity extends AppCompatActivity {
-
+       
+    // API keys exposed.
     private static final String URLs = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1LKeB1cDz2v4BrahitPs4A5MZqXQtfCbBSyI87330vi0&sheet=Sheet1";
     //  private static final String url = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1fVNiNH8-QVgf4sCwIy1g_P__tqOyqf7zHBdAvKOGRQk&sheet=Sheet1";
     List<Sheet1> listsheet;
@@ -249,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Need to convert to Gson
     private void JsonRequest() {
         StringRequest stringRequest = new StringRequest(URLs, new Response.Listener<String>() {
             @Override
@@ -300,7 +302,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    
+    // Need to convert to Gson
     private void JsonRequests() {
         toolbar.setVisibility(View.VISIBLE);
         circleRefreshLayout.setVisibility(View.VISIBLE);
