@@ -160,9 +160,9 @@ public class MainActivity extends AppCompatActivity {
         Random random = new Random();
         int value = random.nextInt(4);
         if (value % 2 == 0) {
-            interstitialAd.setAdUnitId("ca-app-pub-1361359682897035/5729761416");
+            interstitialAd.setAdUnitId("");
         } else {
-            interstitialAd.setAdUnitId("ca-app-pub-1361359682897035/5258988122");
+            interstitialAd.setAdUnitId("");
 
         }
         final AdRequest.Builder request = new AdRequest.Builder();
@@ -380,32 +380,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setVisibility(View.VISIBLE);
     }
 
-    public void snack() {
-
-        coordinatorLayout = findViewById(R.id.coordinator);
-        Snackbar snackbar = Snackbar.make(coordinatorLayout, "", Snackbar.LENGTH_INDEFINITE).setAction("Retry", new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isConnected()) {
-                    //recyclerView.setVisibility(View.VISIBLE);
-                    JsonRequests();
-                } else {
-                    snack();
-                }
-
-            }
-        }).setActionTextColor(Color.WHITE);
-        View svk = snackbar.getView();
-        svk.setBackgroundColor(Color.BLACK);
-        TextView t = svk.findViewById(android.support.design.R.id.snackbar_text);
-        t.setText("Please Check Your Connection");
-        t.setTextColor(Color.WHITE);
-        snackbar.show();
-        imageView.setVisibility(View.VISIBLE);
-        recyclerView.setVisibility(View.INVISIBLE);
-        circleRefreshLayout.finishRefreshing();
-    }
-
+  
     private void Navigation() {
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -461,6 +436,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+      public void snack() {
+
+        coordinatorLayout = findViewById(R.id.coordinator);
+        Snackbar snackbar = Snackbar.make(coordinatorLayout, "", Snackbar.LENGTH_INDEFINITE).setAction("Retry", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isConnected()) {
+                    //recyclerView.setVisibility(View.VISIBLE);
+                    JsonRequests();
+                } else {
+                    snack();
+                }
+
+            }
+        }).setActionTextColor(Color.WHITE);
+        View svk = snackbar.getView();
+        svk.setBackgroundColor(Color.BLACK);
+        TextView t = svk.findViewById(android.support.design.R.id.snackbar_text);
+        t.setText("Please Check Your Connection");
+        t.setTextColor(Color.WHITE);
+        snackbar.show();
+        imageView.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.INVISIBLE);
+        circleRefreshLayout.finishRefreshing();
+    }
 
     private void googlePlat() {
         try {
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity {
             PackageInfo info = p.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
             Intent S = new Intent();
             S.setAction(Intent.ACTION_SEND);
-            S.putExtra(Intent.EXTRA_TEXT, "Wanna be a hacker !!,learn Kali Linux like a Pro ,So just hit the link, and start your journey... https://play.google.com/store/apps/details?id=" + appPackageName);
+            S.putExtra(Intent.EXTRA_TEXT, "Wanna be a hacker !!,Learn Kali Linux like a Pro ,So just hit the link, and start your journey... https://play.google.com/store/apps/details?id=" + appPackageName);
             S.setType("text/plain");
             S.setPackage("com.whatsapp");
             startActivity(S);
