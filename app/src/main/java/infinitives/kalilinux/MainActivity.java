@@ -62,6 +62,7 @@ import static infinitives.kalilinux.R.string.app_name;
 
 public class MainActivity extends AppCompatActivity {
 
+    //API LINK EXPOSED
     private static final String URLs = "https://script.google.com/macros/s/AKfycbxOLElujQcy1-ZUer1KgEvK16gkTLUqYftApjNCM_IRTL3HSuDk/exec?id=1LKeB1cDz2v4BrahitPs4A5MZqXQtfCbBSyI87330vi0&sheet=Sheet1";
     //  private static final String url = "https://script.google.com/macros/s/AKfycbygukdW3tt8sCPcFDlkMnMuNu9bH5fpt7bKV50p2bM/exec?id=1fVNiNH8-QVgf4sCwIy1g_P__tqOyqf7zHBdAvKOGRQk&sheet=Sheet1";
     List<Sheet1> listsheet;
@@ -272,7 +273,13 @@ public class MainActivity extends AppCompatActivity {
                         listsheet.add(sheet1);
                     }
 
+/*
+implementation of GSON Library required.
+Gson can be used in this.
 
+Gson gs = new Gson();
+List<Sheet1> s1 = gs.fromJson(response,Sheet1.java);
+                    */
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
